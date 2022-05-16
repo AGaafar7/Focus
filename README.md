@@ -1,4 +1,4 @@
-# focus
+# Focus
 
 A new Flutter project.
 
