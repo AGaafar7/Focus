@@ -2,6 +2,10 @@
 
 Simple Todo app with Flutter.
 
+# UI
+The Ui is made with figma click the link below:
+https://www.figma.com/community/file/1107715153240700946
+
 ## Getting Started
 
 A few resources to get you started if this is your first Flutter project:
