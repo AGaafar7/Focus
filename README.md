@@ -1,10 +1,12 @@
-# focus
+# Focus
 
-A new Flutter project.
+Simple Todo app with Flutter.
+
+# UI
+The Ui is made with figma click the link below:
+https://www.figma.com/community/file/1107715153240700946
 
 ## Getting Started
-
-This project is a starting point for a Flutter application.
 
 A few resources to get you started if this is your first Flutter project:
 
