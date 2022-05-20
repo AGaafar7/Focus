@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:focus/data/database_barrel.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:focus/widgets/emptylist.dart';
 
 class TodoTiles extends StatefulWidget {
   final backgroundColor;
@@ -96,6 +97,9 @@ class _TodoTilesState extends State<TodoTiles> {
                 this.context, _textController, isDone, widget.todoData)
             .chooseList(widget.searchOrShowOld, widget.todoData),
         builder: (context, snapshot) {
+          if (snapshot.data!.isEmpty) {
+            return const EmptyListWidget();
+          }
           if (snapshot.hasData) {
             return ListView.builder(
               itemCount: snapshot.data?.length,
