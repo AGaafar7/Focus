@@ -17,7 +17,7 @@ void main() {
         body: Text('There are no Todos'),
       ),
     ));
-    // Find a widget that displays the letter 'H'.
+    // Find a widget that displays the letter 'There are no Todos'.
     expect(find.text('There are no Todos'), findsOneWidget);
 
     await tester.pumpWidget(MaterialApp(
