@@ -11,5 +11,25 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:focus/main.dart';
 
 void main() {
-  testWidgets('', (WidgetTester tester) async {});
+  testWidgets('checking click', (WidgetTester tester) async {
+    await tester.pumpWidget(const MaterialApp(
+      home: Scaffold(
+        body: Text('There are no Todos'),
+      ),
+    ));
+    // Find a widget that displays the letter 'H'.
+    expect(find.text('There are no Todos'), findsOneWidget);
+
+    await tester.pumpWidget(MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          actions: [
+            Icon(Icons.add_circle_rounded),
+          ],
+        ),
+      ),
+    ));
+
+    expect(find.byIcon(Icons.add_circle_rounded), findsOneWidget);
+  });
 }
