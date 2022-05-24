@@ -23,7 +23,7 @@ void main() {
     await tester.pumpWidget(MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          actions: [
+          actions: const [
             Icon(Icons.add_circle_rounded),
           ],
         ),
