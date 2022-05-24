@@ -4,7 +4,7 @@ import 'database_barrel.dart';
 
 class MyTaskFunction {
   final dataRepo = DatabaseRepository(DatabaseProvider.get);
-  final textController;
+  final TextEditingController textController;
   bool isDone = false;
   TodoData todoData;
 
