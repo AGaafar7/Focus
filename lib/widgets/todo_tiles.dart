@@ -5,14 +5,14 @@ import 'package:flutter/cupertino.dart';
 import 'package:focus/widgets/emptylist.dart';
 
 class TodoTiles extends StatefulWidget {
-  final backgroundColor;
-  final searchOrShowOld;
-  final todoData;
+  final Color backgroundColor;
+  final bool searchOrShowOld;
+  final TodoData todoData;
 
   const TodoTiles(
       {Key? key,
       required this.backgroundColor,
-      this.searchOrShowOld,
+      required this.searchOrShowOld,
       required this.todoData})
       : super(key: key);
 
