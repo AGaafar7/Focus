@@ -4,14 +4,14 @@ import 'package:flutter/cupertino.dart';
 import 'package:focus/widgets/widget_barrel.dart';
 
 class TodoGridTiles extends StatefulWidget {
-  final backgroundColor;
-  final searchOrShowOld;
-  final todoData;
+  final Color backgroundColor;
+  final bool searchOrShowOld;
+  final TodoData todoData;
 
   const TodoGridTiles(
       {Key? key,
       required this.backgroundColor,
-      this.searchOrShowOld,
+      required this.searchOrShowOld,
       required this.todoData})
       : super(key: key);
 
@@ -96,7 +96,7 @@ class _TodoGridTilesState extends State<TodoGridTiles> {
         builder: (context, snapshot) {
           if (snapshot.hasData) {
             if (snapshot.data!.isEmpty) {
-              return EmptyListWidget();
+              return const EmptyListWidget();
             }
             return GridView.builder(
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
