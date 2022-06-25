@@ -9,7 +9,7 @@ class MyTaskFunction {
   TodoData todoData;
 
   BuildContext context;
-
+  // make this a factory class
   MyTaskFunction(this.context, this.textController, this.isDone, this.todoData);
 
   Future<List<Map>> getTasksList() async {
