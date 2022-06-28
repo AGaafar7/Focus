@@ -32,8 +32,9 @@ abstract class AppTheme {
   static ThemeData light() => ThemeData(
         brightness: Brightness.light,
         appBarTheme: const AppBarTheme(
-            titleTextStyle: TextStyle(color: AppColors.textLight),
-            color: AppColors.textDark),
+          titleTextStyle: TextStyle(color: AppColors.textLight),
+          color: AppColors.textDark,
+        ),
         visualDensity: visualDensity,
         textTheme: const TextTheme().apply(bodyColor: AppColors.textLight),
         backgroundColor: _LightColors.background,
@@ -48,8 +49,9 @@ abstract class AppTheme {
   static ThemeData dark() => ThemeData(
         brightness: Brightness.dark,
         appBarTheme: const AppBarTheme(
-            titleTextStyle: TextStyle(color: AppColors.textDark),
-            color: AppColors.textDark),
+          titleTextStyle: TextStyle(color: AppColors.textDark),
+          color: AppColors.textDark,
+        ),
         visualDensity: visualDensity,
         textTheme: const TextTheme().apply(bodyColor: AppColors.textDark),
         backgroundColor: _DarkColors.background,
