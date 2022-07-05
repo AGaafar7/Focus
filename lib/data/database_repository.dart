@@ -40,7 +40,7 @@ class DatabaseRepository implements Repository {
     final db = await databaseProvider.db();
     await db.delete(
       dao.tableName,
-      where: dao.columnId + " = ?",
+      where: "${dao.columnId} = ?",
       whereArgs: [todoDataId],
     );
     return todoDataId;

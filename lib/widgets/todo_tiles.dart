@@ -17,7 +17,7 @@ class TodoTiles extends StatefulWidget {
       : super(key: key);
 
   @override
-  _TodoTilesState createState() => _TodoTilesState();
+  State<TodoTiles> createState() => _TodoTilesState();
 }
 
 class _TodoTilesState extends State<TodoTiles> {
@@ -111,6 +111,46 @@ class _TodoTilesState extends State<TodoTiles> {
                   child: Slidable(
                     actionPane: const SlidableDrawerActionPane(),
                     actionExtentRatio: 0.25,
+                    actions: <Widget>[
+                      IconSlideAction(
+                        caption: 'Delete',
+                        color: Colors.transparent,
+                        foregroundColor:
+                            Theme.of(context).primaryTextTheme.bodyText1!.color,
+                        iconWidget: const Icon(
+                          Icons.delete,
+                          color: Colors.red,
+                        ),
+                        onTap: () {
+                          MyTaskFunction(this.context, _textController, isDone,
+                                  widget.todoData)
+                              .deleteTodo(
+                            listIndex![index]['id'],
+                          );
+                          setState(() {});
+                        },
+                      ),
+                    ],
+                    secondaryActions: <Widget>[
+                      IconSlideAction(
+                        caption: 'Delete',
+                        color: Colors.transparent,
+                        foregroundColor:
+                            Theme.of(context).primaryTextTheme.bodyText1!.color,
+                        iconWidget: const Icon(
+                          Icons.delete,
+                          color: Colors.red,
+                        ),
+                        onTap: () {
+                          MyTaskFunction(this.context, _textController, isDone,
+                                  widget.todoData)
+                              .deleteTodo(
+                            listIndex![index]['id'],
+                          );
+                          setState(() {});
+                        },
+                      ),
+                    ],
                     child: Card(
                       elevation: 1.0,
                       shape: RoundedRectangleBorder(
@@ -166,48 +206,6 @@ class _TodoTilesState extends State<TodoTiles> {
                         ),
                       ),
                     ),
-                    actions: <Widget>[
-                      IconSlideAction(
-                          caption: 'Delete',
-                          color: Colors.transparent,
-                          foregroundColor: Theme.of(context)
-                              .primaryTextTheme
-                              .bodyText1!
-                              .color,
-                          iconWidget: const Icon(
-                            Icons.delete,
-                            color: Colors.red,
-                          ),
-                          onTap: () {
-                            MyTaskFunction(this.context, _textController,
-                                    isDone, widget.todoData)
-                                .deleteTodo(
-                              listIndex[index]['id'],
-                            );
-                            setState(() {});
-                          }),
-                    ],
-                    secondaryActions: <Widget>[
-                      IconSlideAction(
-                          caption: 'Delete',
-                          color: Colors.transparent,
-                          foregroundColor: Theme.of(context)
-                              .primaryTextTheme
-                              .bodyText1!
-                              .color,
-                          iconWidget: const Icon(
-                            Icons.delete,
-                            color: Colors.red,
-                          ),
-                          onTap: () {
-                            MyTaskFunction(this.context, _textController,
-                                    isDone, widget.todoData)
-                                .deleteTodo(
-                              listIndex[index]['id'],
-                            );
-                            setState(() {});
-                          }),
-                    ],
                   ),
                 );
               },
