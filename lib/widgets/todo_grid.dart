@@ -16,7 +16,7 @@ class TodoGridTiles extends StatefulWidget {
       : super(key: key);
 
   @override
-  _TodoGridTilesState createState() => _TodoGridTilesState();
+  State<TodoGridTiles> createState() => _TodoGridTilesState();
 }
 
 class _TodoGridTilesState extends State<TodoGridTiles> {
@@ -129,34 +129,6 @@ class _TodoGridTilesState extends State<TodoGridTiles> {
         setState(() {});
       },
       child: GridTile(
-        child: Card(
-          elevation: 1.0,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(10.0),
-          ),
-          child: Padding(
-            padding: const EdgeInsets.only(
-              top: 8.0,
-              left: 8.0,
-            ),
-            child: Text(
-              listIndex[index]['task'],
-              style: TextStyle(
-                fontSize: 15,
-                fontWeight: FontWeight.bold,
-                letterSpacing: 0.5,
-                decoration: MyTaskFunction(
-                  context,
-                  _textController,
-                  isDone,
-                  widget.todoData,
-                ).checkTextCompletedDeco(
-                  listIndex[index]['completed'],
-                ),
-              ),
-            ),
-          ),
-        ),
         footer: Padding(
           padding: const EdgeInsets.all(8.0),
           child: GridTileBar(
@@ -205,6 +177,34 @@ class _TodoGridTilesState extends State<TodoGridTiles> {
                       setState(() {});
                     }),
               ],
+            ),
+          ),
+        ),
+        child: Card(
+          elevation: 1.0,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10.0),
+          ),
+          child: Padding(
+            padding: const EdgeInsets.only(
+              top: 8.0,
+              left: 8.0,
+            ),
+            child: Text(
+              listIndex[index]['task'],
+              style: TextStyle(
+                fontSize: 15,
+                fontWeight: FontWeight.bold,
+                letterSpacing: 0.5,
+                decoration: MyTaskFunction(
+                  context,
+                  _textController,
+                  isDone,
+                  widget.todoData,
+                ).checkTextCompletedDeco(
+                  listIndex[index]['completed'],
+                ),
+              ),
             ),
           ),
         ),
